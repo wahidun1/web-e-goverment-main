@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div id="app">
+    <header>
+        <h1>{{ getname() }}</h1>
+    </header>
+    <footer>ini footer</footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+    <script>
+
+        const user={
+            name:'mantap',
+            pesan:'pesan nya kita coba',
+            qty:10
+        }
+        const vm=new Vue({
+            el:'#app',
+            data:user,
+            methods:{
+                getname:function(){
+                    return 'hello,'+this.name
+                },
+                ubahNama:function(namaBaru){
+                    this.name=namaBaru
+                }
+            },
+            computed:{
+                totalBayar:function(){
+                    return this.qty+10000
+                }
+            }
+        })
+    </script>
+</body>
+</html>
